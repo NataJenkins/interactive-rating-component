@@ -2,7 +2,13 @@ import React from "react";
 import Star from "../assets/images/icon-star.svg";
 import "./styles.scss";
 
-export default function RatingComponent({ rating, setRating }) {
+export default function RatingComponent({ rating, setRating, setSubmmitted }) {
+    const handleSubmit = () => {
+        if (rating >= 1) {
+            setSubmmitted(true);
+        }
+    };
+
     return (
         <>
             <div className="icon-container">
@@ -16,7 +22,7 @@ export default function RatingComponent({ rating, setRating }) {
                 </p>
             </div>
             <div className="rating">
-                {[...Array(5)].map((star, index) => {
+                {[...Array(5)].map((_, index) => {
                     index += 1;
                     return (
                         <button
@@ -30,7 +36,13 @@ export default function RatingComponent({ rating, setRating }) {
                     );
                 })}
             </div>
-            <button className="submit">Sumbit</button>
+            <button
+                className="submit"
+                onClick={() => handleSubmit()}
+                type="submit"
+            >
+                Sumbit
+            </button>
         </>
     );
 }
