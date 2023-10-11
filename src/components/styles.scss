@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+$orange: #fb7413;
+$white: #ffffff;
+$light-grey: #959eac;
+$medium-grey: #7c8798;
+$dark-blue: #252d37;
+$very-dark-blue: #121417;
+
+.App {
+    height: 100vh;
+    width: 100vw;
+    background-color: $very-dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Overpass", sans-serif;
+    .card {
+        background: radial-gradient(
+            98.96% 98.96% at 50% 0%,
+            #232a34 0%,
+            #181e27 100%
+        );
+        height: 412px;
+        width: 416px;
+        box-sizing: border-box;
+        padding: 40px;
+        border-radius: 30px;
+
+        .icon-container {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background-color: $dark-blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: $white;
+            font-family: Overpass;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p {
+            color: $light-grey;
+            font-size: 15px;
+            line-height: 24px;
+        }
+        .rating {
+            display: flex;
+            justify-content: space-between;
+            button {
+                border: none;
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+                background-color: $dark-blue;
+                color: $medium-grey;
+                font-size: 16px;
+                line-height: 24px;
+                cursor: pointer;
+                &.on {
+                    background: $medium-grey;
+                    color: $white;
+                }
+                &:hover {
+                    background-color: $orange;
+                    color: white;
+                }
+            }
+        }
+        .submit {
+            width: 341px;
+            height: 45px;
+            flex-shrink: 0;
+            border-radius: 22px;
+            border: none;
+            background-color: $orange;
+            color: $white;
+            margin: 32px 0px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            &:hover {
+                background-color: $white;
+                color: $orange;
+            }
+        }
+    }
+}
