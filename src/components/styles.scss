@@ -32,7 +32,6 @@ $bp-mobile: 375px;
         @media (max-width: $bp-mobile) {
             border-radius: 15px;
             width: 327px;
-            height: 360px;
             padding: 24px;
         }
 
@@ -68,31 +67,60 @@ $bp-mobile: 375px;
                 line-height: 22px;
             }
         }
+        fieldset {
+            border: none;
+        }
         .rating {
             display: flex;
             justify-content: space-between;
-            button {
-                border: none;
-                border-radius: 50%;
-                height: 50px;
-                width: 50px;
-                background-color: $dark-blue;
-                color: $medium-grey;
-                font-size: 16px;
-                line-height: 24px;
-                cursor: pointer;
-                &.on {
-                    background: $medium-grey;
-                    color: $white;
+            label {
+                position: relative;
+                span {
+                    color: $medium-grey;
+                    font-size: 16px;
+                    position: absolute;
+                    top: 17px;
+                    right: 21px;
                 }
-                &:hover {
-                    background-color: $orange;
-                    color: white;
+
+                input[type="radio"] {
+                    margin: 0;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    border: $dark-blue;
+                    background-color: $dark-blue;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: orange;
+                        & ~ span {
+                            color: $white;
+                        }
+                    }
+                    &:checked {
+                        background: $medium-grey;
+                        & ~ span {
+                            color: $white;
+                        }
+                    }
                 }
                 @media only screen and (max-width: $bp-mobile) {
-                    height: 42px;
-                    width: 42px;
-                    font-size: 14px;
+                    input[type="radio"] {
+                        height: 42px;
+                        width: 42px;
+                    }
+                    span {
+                        font-size: 14px;
+                        position: absolute;
+                        top: 13px;
+                        right: 17px;
+                        &:first-of-type {
+                            right: 18px;
+                        }
+                    }
                 }
             }
         }
@@ -150,7 +178,6 @@ $bp-mobile: 375px;
     @media (max-width: $bp-mobile) {
         .card {
             width: 327px;
-            height: 360px;
         }
     }
 }
